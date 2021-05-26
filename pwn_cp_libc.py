@@ -39,6 +39,6 @@ for LibcName in LibcNameList:
         
         if (item in  LibcName) and ("amd64" in LibcName):
             
-            os.system("sudo cp ./libs/{}/* /glibc/{}/64/lib/".format(LibcName,item))
+            os.system("sudo cp -a ./libs/{}/. /glibc/{}/64/lib/".format(LibcName,item))
         if (item in LibcName) and ("i386" in LibcName):
-            os.system("sudo cp ./libs/{}/* /glibc/{}/32/lib/".format(LibcName,item))
+            os.system("sudo cp -a ./libs/{}/. /glibc/{}/32/lib/".format(LibcName,item))
