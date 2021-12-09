@@ -81,7 +81,9 @@ you can download the debs on your own, then use `extract`.
 ./extract ~/libc6_2.26-0ubuntu2_i386.deb /tmp/test
 ./extract ~/libc6-dbg_2.26-0ubuntu2_i386.deb /tmp/test_dbg
 ```
+You can run the command to complete the above operation
 
+`python download-all.py`
 ## compile
 
 supported version: 2.19, 2.23-2.29
