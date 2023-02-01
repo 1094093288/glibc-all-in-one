@@ -6,8 +6,8 @@ def download(LibcNameList):
 
 def mkDir(name):
     for item in name:
-        os.system("sudo mkdir -p /glibc/{}/64/lib/".format(item))
-        os.system("sudo mkdir -p /glibc/{}/32/lib/".format(item))
+        os.system("mkdir -p ~/glibc/{}/64/lib/".format(item))
+        os.system("mkdir -p ~/glibc/{}/32/lib/".format(item))
 
 def getName(LibcNameList):
     name=[]
@@ -19,7 +19,7 @@ def getName(LibcNameList):
     print("name:",name)
     return name
 
-os.system("./update_list")
+#os.system("./update_list")
 
 f=open("./list","r")
 content=f.read()
@@ -31,7 +31,7 @@ name=getName(LibcNameList)
 mkDir(name)
 
 
-download(LibcNameList)
+#download(LibcNameList)
 for LibcName in LibcNameList:
     
 
@@ -39,6 +39,7 @@ for LibcName in LibcNameList:
         
         if (item in  LibcName) and ("amd64" in LibcName):
             
-            os.system("sudo cp -a ./libs/{}/. /glibc/{}/64/lib/".format(LibcName,item))
+            os.system("cp -a ./libs/{}/. ~/glibc/{}/64/lib/".format(LibcName,item))
         if (item in LibcName) and ("i386" in LibcName):
-            os.system("sudo cp -a ./libs/{}/. /glibc/{}/32/lib/".format(LibcName,item))
+            os.system("cp -a ./libs/{}/. ~/glibc/{}/32/lib/".format(LibcName,item))
+
